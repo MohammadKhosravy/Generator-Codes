@@ -12,7 +12,7 @@ double timelimit = 30;
 double globalstart;
 
 
-void Select::gen_RU()
+void Select::generate_2ST_D_U()
 {
     //first-stage costs
     C.resize(n);
@@ -64,73 +64,7 @@ void Select::gen_RU()
 
 }
 
-void Select::gen_R21()
-{
-    //first-stage costs
-    C.resize(n);
-    nomC.resize(n);
-    Cl.resize(n);
-	Cu.resize(n);
-    for (int k=0; k<n; ++k)
-    {
-        if (rand()%2==0)
-            C[k] = rand()%100+1;
-        else
-            C[k] = 50;
-
-        nomC[k] = C[k];
-
-        Cl[k] = max(0.0, C[k] - scenbudget);
-        Cu[k] = min(100.0, C[k] + scenbudget);
-    }
-
-
-    //second-stage costs
-	c.resize(N);
-	nomc.resize(N);
-	for (int i=0; i<N; ++i)
-	{
-		c[i].resize(n,-1);
-		nomc[i].resize(n,-1);
-	}
-
-	// find random lower and upper bounds
-	cl.resize(N);
-	cu.resize(N);
-
-	for (int i=0; i<N; ++i)
-	{
-		cl[i].resize(n);
-		cu[i].resize(n);
-
-		for (int k=0; k<n; ++k)
-		{
-			if (C[k]==50)
-            {
-                if (rand()%2==0)
-                    c[i][k]= rand()%10+1;
-                else
-                    c[i][k]= rand()%10+91;
-            }
-
-            else
-                c[i][k]= rand()%11+C[k]-5;
-
-			nomc[i][k] = max(0 , c[i][k]);
-
-			cl[i][k] = c[i][k]-scenbudget;
-			if (cl[i][k] < 0)
-				cl[i][k] = 0;
-
-			cu[i][k] = c[i][k]+scenbudget;
-			if (cu[i][k] > 100)
-				cu[i][k] = 100;
-		}
-	}
-
-}
-
-void Select::gen_R17()
+void Select::generate_2ST_D_1()
 {
     //first-stage costs
     C.resize(n);
@@ -195,62 +129,71 @@ void Select::gen_R17()
 
 }
 
-//void Select::gen_R18()
-//{
-//    //first-stage costs
-//    C.resize(n);
-//    nomC.resize(n);
-//    Cl.resize(n);
-//	Cu.resize(n);
-//    for (int k=0; k<n; ++k)
-//    {
-//        if (rand()%2==0)
-//            C[k] = rand()%11+45;
-//        else
-//            C[k] = 50;
-//
-//        nomC[k] = C[k];
-//
-//        Cl[k] = max(0.0, C[k] - scenbudget);
-//        Cu[k] = min(100.0, C[k] + scenbudget);
-//    }
-//
-//
-//    //second-stage costs
-//	c.resize(N);
-//	nomc.resize(N);
-//	for (int i=0; i<N; ++i)
-//	{
-//		c[i].resize(n,-1);
-//		nomc[i].resize(n,-1);
-//	}
-//
-//	// find random lower and upper bounds
-//	cl.resize(N);
-//	cu.resize(N);
-//
-//	for (int i=0; i<N; ++i)
-//	{
-//		cl[i].resize(n);
-//		cu[i].resize(n);
-//
-//		for (int k=0; k<n; ++k)
-//		{
-//			c[i][k] = rand()%11+C[k]-5;
-//
-//			nomc[i][k] = c[i][k];
-//
-//			cl[i][k] = c[i][k]-scenbudget;
-//			if (cl[i][k] < 0)
-//				cl[i][k] = 0;
-//
-//			cu[i][k] = c[i][k]+scenbudget;
-//			if (cu[i][k] > 100)
-//				cu[i][k] = 100;
-//		}
-//	}
-//
-//}
+void Select::generate_2ST_D_2()
+{
+    //first-stage costs
+    C.resize(n);
+    nomC.resize(n);
+    Cl.resize(n);
+	Cu.resize(n);
+    for (int k=0; k<n; ++k)
+    {
+        if (rand()%2==0)
+            C[k] = rand()%100+1;
+        else
+            C[k] = 50;
+
+        nomC[k] = C[k];
+
+        Cl[k] = max(0.0, C[k] - scenbudget);
+        Cu[k] = min(100.0, C[k] + scenbudget);
+    }
+
+
+    //second-stage costs
+	c.resize(N);
+	nomc.resize(N);
+	for (int i=0; i<N; ++i)
+	{
+		c[i].resize(n,-1);
+		nomc[i].resize(n,-1);
+	}
+
+	// find random lower and upper bounds
+	cl.resize(N);
+	cu.resize(N);
+
+	for (int i=0; i<N; ++i)
+	{
+		cl[i].resize(n);
+		cu[i].resize(n);
+
+		for (int k=0; k<n; ++k)
+		{
+			if (C[k]==50)
+            {
+                if (rand()%2==0)
+                    c[i][k]= rand()%10+1;
+                else
+                    c[i][k]= rand()%10+91;
+            }
+
+            else
+                c[i][k]= rand()%11+C[k]-5;
+
+			nomc[i][k] = max(0.0 , c[i][k]);
+
+			cl[i][k] = c[i][k]-scenbudget;
+			if (cl[i][k] < 0)
+				cl[i][k] = 0;
+
+			cu[i][k] = c[i][k]+scenbudget;
+			if (cu[i][k] > 100)
+				cu[i][k] = 100;
+		}
+	}
+
+}
 
 void  Select::generate_hard_C(int _n, int _p, int _N, int _R)
 {
@@ -262,13 +205,11 @@ void  Select::generate_hard_C(int _n, int _p, int _N, int _R)
 	R = _R;
 
 	if (R == 0)
-        gen_RU();
-    else if (R == 17)
-        gen_R17();
-    //else if (R == 18)
-        //gen_R18();
-    else if (R == 21)
-        gen_R21();
+        generate_2ST_D_U();
+    else if (R == 1)
+        generate_2ST_D_1();
+    else if (R == 2)
+        generate_2ST_D_2();
 
 	Solution startsol = solve_ip();
     if (!status)
@@ -366,13 +307,11 @@ void  Select::generate_hard_C_and_c(int _n, int _p, int _N, int _R)
     R = _R;
 
 	if (R == 0)
-        gen_RU();
-    else if (R == 17)
-        gen_R17();
-    //else if (R == 18)
-        //gen_R18();
-    else if (R == 21)
-        gen_R21();
+        generate_2ST_D_U();
+    else if (R == 1)
+        generate_2ST_D_1();
+    else if (R == 2)
+        generate_2ST_D_2();
 
 
 	Solution startsol = solve_ip();
@@ -787,13 +726,11 @@ void Select::generate_rand(int _n, int _p, int _N, int _R)
     R = _R;
 
 	if (R == 0)
-        gen_RU();
-    else if (R == 17)
-        gen_R17();
-    //else if (R == 18)
-        //gen_R18();
-    else if (R == 21)
-        gen_R21();
+        generate_2ST_D_U();
+    else if (R == 1)
+        generate_2ST_D_1();
+    else if (R == 2)
+        generate_2ST_D_2();
 
 }
 

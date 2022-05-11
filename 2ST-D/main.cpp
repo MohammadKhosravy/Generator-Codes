@@ -17,7 +17,7 @@ int main (int argc, char* argv[])
 	int n = atoi(argv[1]);
 	int p = atoi(argv[2]);
 	int N = atoi(argv[3]);
-	int para = atoi(argv[4]);
+	int param = atoi(argv[4]);
 	int R = atoi(argv[5]);
 
 	Select sel;
@@ -25,12 +25,17 @@ int main (int argc, char* argv[])
 	sel.set_budget(atoi(argv[7]));
 
 	double start = clock();
-	if (para == 0)
+	if (param == 0)
 		sel.generate_rand(n,p,N,R);
-	else if (para == 1)
+	else if (param == 1)
 		sel.generate_hard_C(n,p,N,R);
-    else if (para == 2)
+    else if (param == 2)
 		sel.generate_hard_C_and_c(n,p,N,R);
+	else
+	{
+		cout << "WARNING: THE FOURTH ARGUMENT COULD ONLY BE 0,1 OR 2" << endl;
+		return 0;
+	}
 
     //sel.print();
 
@@ -40,7 +45,7 @@ int main (int argc, char* argv[])
 	start = clock();
 	Solution sol = sel.solve_ip(60);
 	double soltime = (clock()-start)/CLOCKS_PER_SEC;
-	cout<<"./TIME;"<<soltime<<"\n";
+	cout<<"SOLUTION-TIME;"<<soltime<<"\n";
 	cout<<"NODES;"<<sol.nodes<<"\n";
 	cout<<"OBJ;"<<sol.ub<<"\n";
 
