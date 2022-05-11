@@ -12,7 +12,7 @@ double timelimit = 30;
 double globalstart;
 
 
-void Select::gen_RU()
+void Select::generate_RR_D_U()
 {
     //first-stage costs
     C.resize(n);
@@ -64,7 +64,7 @@ void Select::gen_RU()
 
 }
 
-void Select::gen_R17()
+void Select::generate_RR_D_1()
 {
     //first-stage costs
     C.resize(n);
@@ -129,7 +129,7 @@ void Select::gen_R17()
 
 }
 
-void Select::gen_R21()
+void Select::generate_RR_D_2()
 {
     //first-stage costs
     C.resize(n);
@@ -206,11 +206,11 @@ void  Select::generate_hard_C(int _n, int _p, int _N, int _delta, int _R)
 	R = _R;
 
 	if (R == 0)
-        gen_RU();
-    else if (R == 17)
-        gen_R17();
-    else if (R == 21)
-        gen_R21();
+        generate_RR_D_U();
+    else if (R == 1)
+        generate_RR_D_1();
+    else if (R == 2)
+        generate_RR_D_2();
 
 	Solution startsol = solve_ip();
     if (!status)
@@ -309,11 +309,11 @@ void  Select::generate_hard_C_and_c(int _n, int _p, int _N, int _delta, int _R)
     R = _R;
 
 	if (R == 0)
-        gen_RU();
-    else if (R == 17)
-        gen_R17();
-    else if (R == 21)
-        gen_R21();
+        generate_RR_D_U();
+    else if (R == 1)
+        generate_RR_D_1();
+    else if (R == 2)
+        generate_RR_D_2();
 
 
 	Solution startsol = solve_ip();
@@ -738,12 +738,11 @@ void Select::generate_rand(int _n, int _p, int _N, int _delta, int _R)
     R = _R;
 
 	if (R == 0)
-        gen_RU();
-    else if (R == 17)
-        gen_R17();
-    else if (R == 21)
-        gen_R21();
-
+        generate_RR_D_U();
+    else if (R == 1)
+        generate_RR_D_1();
+    else if (R == 2)
+        generate_RR_D_2();
 }
 
 

@@ -55,9 +55,9 @@ class Select
 		double solve_master_C();
         double solve_master_C_and_c();
 
-		void gen_RU();
-		void gen_R17();
-		void gen_R21();
+		void generate_RR_D_U();
+		void generate_RR_D_1();
+		void generate_RR_D_2();
 
 		int scenbudget;
 
