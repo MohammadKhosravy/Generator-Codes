@@ -9,7 +9,7 @@ ILOSTLBEGIN
 using namespace std;
 
 
-void Select::gen_RU()
+void Select::generate_MMR_I_U()
 {
     //costs
 	c.resize(n);
@@ -27,7 +27,7 @@ void Select::gen_RU()
 
 }
 
-void Select::gen_R5()
+void Select::generate_MMR_I_1()
 {
     //costs
 	c.resize(n);
@@ -52,7 +52,7 @@ void Select::gen_R5()
 
 }
 
-void Select::gen_R6()
+void Select::generate_MMR_I_2()
 {
     //costs
 	c.resize(n);
@@ -84,11 +84,11 @@ void Select::generate_rand(int _n, int _p, int _R)
 	R = _R;
 
 	if (R == 0)
-        gen_RU();
-    else if (R == 5)
-        gen_R5();
-    else if (R == 6)
-        gen_R6();
+        generate_MMR_I_U();
+    else if (R == 1)
+        generate_MMR_I_1();
+    else if (R == 2)
+        generate_MMR_I_2();
 }
 
 void  Select::generate_hard_c_d(int _n, int _p, int _R, double _b, int _t)
@@ -99,12 +99,12 @@ void  Select::generate_hard_c_d(int _n, int _p, int _R, double _b, int _t)
     b = _b;
     t = _t;
 
-    if (R == 0)
-        gen_RU();
-    else if (R == 5)
-        gen_R5();
-    else if (R == 6)
-        gen_R6();
+	if (R == 0)
+        generate_MMR_I_U();
+    else if (R == 1)
+        generate_MMR_I_1();
+    else if (R == 2)
+        generate_MMR_I_2();
 
 
     set<double> tempi;

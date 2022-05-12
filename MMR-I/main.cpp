@@ -16,7 +16,7 @@ int main (int argc, char* argv[])
 
 	int n = atoi(argv[1]);
 	int p = atoi(argv[2]);
-	int para = atoi(argv[3]);
+	int param = atoi(argv[3]);
 	int R = atoi(argv[4]);          //to choose what random method
 	int t = atoi(argv[5]);
 	double b = atof(argv[6]);
@@ -26,10 +26,15 @@ int main (int argc, char* argv[])
 	Select sel;
 
 	double start = clock();
-	if (para == 0)
+	if (param == 0)
 		sel.generate_rand(n,p,R);
-	else if (para == 1)
+	else if (param == 1)
 		sel.generate_hard_c_d(n,p,R,b,t);
+	else
+	{
+		cout << "WARNING: THE THIRD ARGUMENT COULD ONLY BE 0 OR 1" << endl;
+		return 0;
+	}
 
 	vector<double> c = sel.get_c();
 	vector<double> d = sel.get_d();

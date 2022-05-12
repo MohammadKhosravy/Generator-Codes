@@ -28,9 +28,9 @@ class Select
         std::vector<double> d;
         std::vector<double> nomd;
 
-		void gen_RU();
-		void gen_R5();
-		void gen_R6();
+		void generate_MMR_I_U();
+		void generate_MMR_I_1();
+		void generate_MMR_I_2();
 
         bool status;
 };
