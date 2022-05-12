@@ -13,7 +13,7 @@ double timelimit = 30;
 double globalstart;
 
 
-void Select::gen_U()
+void Select::generate_MMR_D_U()
 {
     //costs
 	c.resize(N);
@@ -50,7 +50,7 @@ void Select::gen_U()
 
 }
 
-void Select::gen_R2()
+void Select::generate_MMR_D_1()
 {
     //costs
 	c.resize(N);
@@ -91,7 +91,7 @@ void Select::gen_R2()
 
 }
 
-void Select::gen_R3()
+void Select::generate_MMR_D_2()
 {
     //costs
 	c.resize(N);
@@ -143,11 +143,11 @@ void  Select::generate_hard_c(int _n, int _p, int _N, int _R)
 	R = _R;
 
     if (R==0)
-        gen_U();
+        generate_MMR_D_U();
+    else if (R==1)
+        generate_MMR_D_1();
     else if (R==2)
-        gen_R2();
-    else if (R==3)
-        gen_R3();
+        generate_MMR_D_2();
 
 	Solution startsol = solve_ip();
     if (!status)
@@ -398,11 +398,11 @@ void Select::generate_rand(int _n, int _p, int _N, int _R)
     R = _R;
 
     if (R==0)
-        gen_U();
+        generate_MMR_D_U();
+    else if (R==1)
+        generate_MMR_D_1();
     else if (R==2)
-        gen_R2();
-    else if (R==3)
-        gen_R3();
+        generate_MMR_D_2();
 
 };
 

@@ -17,18 +17,23 @@ int main (int argc, char* argv[])
 	int n = atoi(argv[1]);
 	int p = atoi(argv[2]);
 	int N = atoi(argv[3]);
-	int para = atoi(argv[4]);
-	int R = atoi(argv[5]);          //to choose what random method (R=0 RU) - (R=2 R2) - (R=3 R3)
+	int param = atoi(argv[4]);
+	int R = atoi(argv[5]);          
 
 	Select sel;
 	sel.set_timelimit(atoi(argv[6]));
 	sel.set_budget(atoi(argv[7]));
 
 	double start = clock();
-	if (para == 0)
+	if (param == 0)
 		sel.generate_rand(n,p,N,R);
-	else if (para == 1)
+	else if (param == 1)
 		sel.generate_hard_c(n,p,N,R);
+	else
+	{
+		cout << "WARNING: THE FOURTH ARGUMENT COULD ONLY BE 0 OR 1" << endl;
+		return 0;
+	}
 
 	cout<<"ALGTIME;"<<(clock()-start)/CLOCKS_PER_SEC<<"\n";
 
