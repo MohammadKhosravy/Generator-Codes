@@ -28,9 +28,6 @@ class Select
 		int t,R,K;
 		float b;
 
-		//std::set<double> tempi();
-		//std::vector<double> pi;
-
 		std::vector<double> c;
 		std::vector<double> nomc;
 
@@ -47,24 +44,9 @@ class Select
 
         std::set<double> tempi;
 
-//        void generate_RU_dis1();
-//        void generate_RU_con1();
-        void generate_RU_dis2();
-//        void generate_RU_con2();
-//
-//        void generate_R1_dis1();
-//        void generate_R1_con1();
-        void generate_R1_dis2();
-//        void generate_R1_con2();
-//
-//        void generate_R5_dis1();
-//        void generate_R5_con1();
-        void generate_R5_dis2();
-//        void generate_R5_con2();
-
-//		void gen_RU();
-//		void gen_R1();
-//		void gen_R5();
+        void generate_MM_B_U();
+        void generate_MM_B_1();
+        void generate_MM_B_2();
 
         bool status;
 };

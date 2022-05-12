@@ -17,7 +17,7 @@ int main (int argc, char* argv[])
 	int n = atoi(argv[1]);
 	int p = atoi(argv[2]);
 	int gamma = atoi(argv[3]);
-	int para = atoi(argv[4]);
+	int param = atoi(argv[4]);
 	int R = atoi(argv[5]);          //to choose what random method
 	int t = atoi(argv[6]);
     float b = atof(argv[7]);
@@ -27,26 +27,20 @@ int main (int argc, char* argv[])
 	Select sel;
 
 	//double start = clock();
-	if (para == 0)
+	if (param == 0)
 		sel.generate_rand(n,p,gamma,R);
-	else if (para == 1)
+	else if (param == 1)
 		sel.generate_hard_c_1(n,p,gamma,R,b,t);
-    else if (para == 2)
+    else if (param == 2)
 		sel.generate_hard_d_1(n,p,gamma,R,b,t);
-    else if (para == 3)
+    else if (param == 3)
 		sel.generate_hard_c_d_1(n,p,gamma,R,b,t);
-	else if (para == 4)
+	else if (param == 4)
 		sel.generate_hard_c_2(n,p,gamma,R,b,t);
-    else if (para == 5)
+    else if (param == 5)
 		sel.generate_hard_d_2(n,p,gamma,R,b,t);
-    else if (para == 6)
+    else if (param == 6)
 		sel.generate_hard_c_d_2(n,p,gamma,R,b,t);
-//    else if (para == 4)
-//		sel.generate_hard_c_new(n,p,gamma,R,b,t);
-//    else if (para == 5)
-//		sel.generate_hard_d_new(n,p,gamma,R,b,t);
-//    else if (para == 6)
-//		sel.generate_hard_c_d_new(n,p,gamma,R,b,t);
 
 
 	vector<double> c = sel.get_c();

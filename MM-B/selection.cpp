@@ -8,44 +8,7 @@ ILOSTLBEGIN
 
 using namespace std;
 
-//void Select::generate_RU_dis1()
-//{
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = rand()%101;
-//        d[i] = rand()%101;
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-//
-//void Select::generate_RU_con1()
-//{
-//
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = fRand(0.0 , 100.0);
-//        d[i] = fRand(0.0 , 100.0);
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-
-void Select::generate_RU_dis2()
+void Select::generate_MM_B_U()
 {
 
     c.resize(n);
@@ -62,80 +25,9 @@ void Select::generate_RU_dis2()
         nomd[i] = d[i];
     }
 
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = 30;
-//        d[i] = 3;
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-
 }
 
-//void Select::generate_RU_con2()
-//{
-//
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = fRand(1.0 , 100);
-//        d[i] = fRand(1.0 , 100);
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-//
-//void Select::generate_R1_dis1()
-//{
-//
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = rand()%101;
-//        d[i] = 100 - c[i];
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-//
-//void Select::generate_R1_con1()
-//{
-//
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = fRand(0.0 , 100.0);
-//        d[i] = 100.0 - c[i];
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-
-void Select::generate_R1_dis2()
+void Select::generate_MM_B_1()
 {
 
     c.resize(n);
@@ -154,64 +46,7 @@ void Select::generate_R1_dis2()
 
 }
 
-//void Select::generate_R1_con2()
-//{
-//
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = fRand(1.0 , 100.0);
-//        d[i] = 100.0 - c[i];
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-//
-//void Select::generate_R5_dis1()
-//{
-//
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = rand()%11;
-//        d[i] = rand()%(int(c[i])+1)+(100-c[i]);
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-//
-//void Select::generate_R5_con1()
-//{
-//
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = fRand(0.0 , 10.0);
-//        d[i] = fRand(100-c[i] , 100.0);
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-
-void Select::generate_R5_dis2()
+void Select::generate_MM_B_2()
 {
 
     c.resize(n);
@@ -230,26 +65,6 @@ void Select::generate_R5_dis2()
 
 }
 
-//void Select::generate_R5_con2()
-//{
-//
-//    c.resize(n);
-//    d.resize(n);
-//    nomc.resize(n);
-//    nomd.resize(n);
-//
-//    for (int i=0; i<n; ++i)
-//    {
-//        c[i] = fRand(1.0 , 10.0);
-//        d[i] = fRand(100-c[i] , 100.0);
-//
-//        nomc[i] = c[i];
-//        nomd[i] = d[i];
-//    }
-//
-//}
-
-
 void Select::generate_rand(int _n, int _p, int _gamma, int _R)
 {
 	n = _n;
@@ -258,11 +73,11 @@ void Select::generate_rand(int _n, int _p, int _gamma, int _R)
 	R = _R;
 
 	if (R == 0)
-        generate_RU_dis2();
+        generate_MM_B_U();
     else if (R == 1)
-        generate_R1_dis2();
-    else if (R == 5)
-        generate_R5_dis2();
+        generate_MM_B_1();
+    else if (R == 2)
+        generate_MM_B_2();
 
 
 //	if (R == 1)
@@ -300,12 +115,12 @@ void  Select::generate_hard_c_1(int _n, int _p, int _gamma, int _R, float _b, in
     b = _b;
     t = _t;
 
-   	if (R == 0)
-        generate_RU_dis2();
+	if (R == 0)
+        generate_MM_B_U();
     else if (R == 1)
-        generate_R1_dis2();
-    else if (R == 5)
-        generate_R5_dis2();
+        generate_MM_B_1();
+    else if (R == 2)
+        generate_MM_B_2();
 
 
 //	if (R == 1)
@@ -481,12 +296,12 @@ void  Select::generate_hard_d_1(int _n, int _p, int _gamma, int _R, float _b, in
     b = _b;
     t = _t;
 
-   	if (R == 0)
-        generate_RU_dis2();
+	if (R == 0)
+        generate_MM_B_U();
     else if (R == 1)
-        generate_R1_dis2();
-    else if (R == 5)
-        generate_R5_dis2();
+        generate_MM_B_1();
+    else if (R == 2)
+        generate_MM_B_2();
 
 
 //    if (R == 1)
@@ -686,13 +501,12 @@ void  Select::generate_hard_c_d_1(int _n, int _p, int _gamma, int _R, float _b, 
     b = _b;
     t = _t;
 
-
 	if (R == 0)
-        generate_RU_dis2();
+        generate_MM_B_U();
     else if (R == 1)
-        generate_R1_dis2();
-    else if (R == 5)
-        generate_R5_dis2();
+        generate_MM_B_1();
+    else if (R == 2)
+        generate_MM_B_2();
 
 
 //    if (R == 1)
@@ -932,11 +746,11 @@ void  Select::generate_hard_c_2(int _n, int _p, int _gamma, int _R, float _b, in
 
 
 	if (R == 0)
-        generate_RU_dis2();
+        generate_MM_B_U();
     else if (R == 1)
-        generate_R1_dis2();
-    else if (R == 5)
-        generate_R5_dis2();
+        generate_MM_B_1();
+    else if (R == 2)
+        generate_MM_B_2();
 
 
 
@@ -1115,11 +929,11 @@ void  Select::generate_hard_d_2(int _n, int _p, int _gamma, int _R, float _b, in
 
 
 	if (R == 0)
-        generate_RU_dis2();
+        generate_MM_B_U();
     else if (R == 1)
-        generate_R1_dis2();
-    else if (R == 5)
-        generate_R5_dis2();
+        generate_MM_B_1();
+    else if (R == 2)
+        generate_MM_B_2();
 
 
 //    if (R == 1)
@@ -1320,11 +1134,11 @@ void  Select::generate_hard_c_d_2(int _n, int _p, int _gamma, int _R, float _b, 
     t = _t;
 
 	if (R == 0)
-        generate_RU_dis2();
+        generate_MM_B_U();
     else if (R == 1)
-        generate_R1_dis2();
-    else if (R == 5)
-        generate_R5_dis2();
+        generate_MM_B_1();
+    else if (R == 2)
+        generate_MM_B_2();
 
 
 
