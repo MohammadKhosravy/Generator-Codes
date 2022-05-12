@@ -17,7 +17,7 @@ class Select
 	public:
 		void generate_rand(int _n, int _p, int _N, int _R);
 		void generate_hard_c(int _n, int _p, int _N, int _R);
-        //void generate_hard_C_and_c(int _n, int _p, int _N);
+        	//void generate_hard_C_and_c(int _n, int _p, int _N);
 
 		Solution solve_ip(double tlim = -1);
 
@@ -32,8 +32,8 @@ class Select
 		std::vector<std::vector<double> > c;
 		std::vector<std::vector<double> > nomc;
 
-        //std::vector<double> C;
-        //std::vector<double> nomC;
+	        //std::vector<double> C;
+        	//std::vector<double> nomC;
 
 		std::vector<std::vector<double> > x;
 
@@ -41,19 +41,19 @@ class Select
 		std::vector<std::vector<double> > cl;
 		std::vector<std::vector<double> > cu;
 
-        //std::vector<double> Cl;
-        //std::vector<double> Cu;
+	        //std::vector<double> Cl;
+        	//std::vector<double> Cu;
 
 		double solve_master();
-        //double solve_master_C_and_c();
+        	//double solve_master_C_and_c();
 
-		void gen_U();
-		void gen_R2();
-		void gen_R3();
+		void generate_MM_D_U();
+		void generate_MM_D_1();
+		void generate_MM_D_2();
 
 		int scenbudget;
 
-        bool status;
+	        bool status;
 };
 
 #endif
