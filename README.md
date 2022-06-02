@@ -6,7 +6,7 @@ Instruction of using generator codes:
 
 Each folder contains three files named main.cpp, selection.cpp and sel.h. The main.cpp file introduces the input parameters. The selection.cpp file consists of all the function we used and the sel file.h, has all the classes defined. The input parameters, which should be given through the command line are different for each problem. Therefore, they are described for all combination of problems in the following sections: 
 
-
+--------------------------------------------------------------------------------------------------------
 1. MIN-MAX PROBLEM WITH DISCRETE UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -48,7 +48,7 @@ b: maximum permitted adjustment for each member of a scenario
 
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
-
+--------------------------------------------------------------------------------------------------------
 3. MIN-MAX REGRET PROBLEM WITH DISCRETE UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -69,7 +69,7 @@ budget: maximum permitted adjustment for each member of a scenario
 
 random seed: this allows the user to generate different instances when all other parametrs are the same
 
-
+--------------------------------------------------------------------------------------------------------
 4. MIN-MAX REGRET PROBLEM WITH INTERVAL UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -88,7 +88,7 @@ b: maximum permitted adjustment for each member of a scenario
 
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
-
+--------------------------------------------------------------------------------------------------------
 5. TWO-STAGE PROBLEM WITH DISCRETE UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -109,7 +109,7 @@ budget: maximum permitted adjustment for each member of a scenario
 
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
-
+--------------------------------------------------------------------------------------------------------
 6. TWO-STAGE PROBLEM WITH DISCRETE BUDGETED UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -124,7 +124,7 @@ param: method of instance generation (param=0 for 2ST_DB_U) (param=1 for 2ST_DB_
 
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
-
+--------------------------------------------------------------------------------------------------------
 7. TWO-STAGE PROBLEM WITH CONTINUOUS BUDGETED UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -139,7 +139,7 @@ param: method of instance generation (param=0 for 2ST_CB_U) (param=1 for 2ST_CB_
 
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
-
+--------------------------------------------------------------------------------------------------------
 8. RECOVERABLE PROBLEM WITH DISCRETE UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -162,7 +162,7 @@ budget: maximum permitted adjustment for each member of a scenario
 
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
-
+--------------------------------------------------------------------------------------------------------
 9. RECOVERABLE PROBLEM WITH DISCRETE BUDGETED UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -177,6 +177,7 @@ param: method of instance generation (param=0 for RR_DB_U) (param=1 for RR_DB_1)
 
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
+--------------------------------------------------------------------------------------------------------
 10. RECOVERABLE PROBLEM WITH CONTINUOUS BUDGETED UNCERTAINTY SET:
 
 In this setting the parameters must be given the the exact following order for the selection problem:
@@ -191,6 +192,7 @@ param: method of instance generation (param=0 for RR_CB_U) (param=1 for RR_CB_1)
 
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
+--------------------------------------------------------------------------------------------------------
 
 
 
