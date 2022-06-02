@@ -23,7 +23,6 @@ R: methods of sampling or starting the HIRO (R=0 for MM_D_U) (R=1 for MM_D_1) (R
 timelimit: the time limit for finishing the process, in particular for the HIRO
 
 budget: maximum permitted adjustment for each member of a scenario
-
 random seed: this allows the user to generate different instances when all other parametrs are the same 
 
 
